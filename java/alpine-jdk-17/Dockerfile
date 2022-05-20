@@ -1,0 +1,5 @@
+FROM postgres:alpine3.15
+
+ENV POSTGRES_USER avti
+ENV POSTGRES_PASSWORD avti
+ENV POSTGRES_DB avti
