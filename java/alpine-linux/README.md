@@ -1,23 +1,39 @@
-* Dockerfile for postges
-    * Create docker image from Dockerfile_db
-      * docker build -t docker_image .
-      * Ex, docker build -t avti_image .
+* Docker command to build an image
+    * docker build -t username/imagename:version
+
+
+* Dockerfile for Postgres DB
+    * from db folder , execute 
+      * docker build -t slabstech/avti-db:1.0 .
+
+* Dockerfile for Java app
+    * Copy created jar file to target java directory
+    * Execute in app folder
+      * docker build -t slabstech/avti-app:1.0
+
+* Publish images to docker hub
+    * docker push username/imagname:version
+      * Ex.
+        * docker push slabstech/avti-app:1.0
+        * docker push slabstech/avti-db:1.0
+
+* To run the images
+    * Execute in folder containing docker-compose.yml
+      * docker-compose up
+    * Execute 'docker ps' to find container id of image running avti-app
+    * Run 'docker inspect container-id' to find IP address of Apache tomcat App
+
+* Verify in browser with containerImageIp:8080
+
+
+* Extra
+* To test postgres db container
     * Start a docker instance from docker_image
       * docker run --name docker_image -d postgres
-      * Ex : docker run --name avti_run -d avti_run
+      * Ex : docker run --name avti-db -d avti_run
     * Connect to postgres instance
       * docker exec -it docker_instance psql -U postgres_user
-      Ex. docker exec -it avti_run psql -U avti_user
-
-* Docker file for java
-    * Copy created jar file to target directory
-    * Dockerfile_java will copy the jar file and execute the command "java -jar name.jar"
-
-
-* Docker Compose
-    * docker-compose up
-
-
+      * Ex. docker exec -it avti_run psql -U avti_db
 
 
 * References
