@@ -4,18 +4,18 @@
 
 * Dockerfile for Postgres DB
     * from db folder , execute 
-      * docker build -t slabstech/avti-db:1.0 .
+      * docker build -t slabstech/revive-db:0.0.1-SNAPSHOT .
 
 * Dockerfile for Java app
     * Copy created jar file to target java directory
     * Execute in app folder
-      * docker build -t slabstech/avti-app:1.0
+      * docker build -t slabstech/avti-app:0.0.1-SNAPSHOT
 
 * Publish images to docker hub
     * docker push username/imagname:version
       * Ex.
-        * docker push slabstech/avti-app:1.0
-        * docker push slabstech/avti-db:1.0
+        * docker push slabstech/avti-app:0.0.1-SNAPSHOT
+        * docker push slabstech/avti-db:0.0.1-SNAPSHOT
 
 * To run the images
     * Execute in folder containing docker-compose.yml
@@ -30,10 +30,10 @@
 * To test postgres db container
     * Start a docker instance from docker_image
       * docker run --name docker_image -d postgres
-      * Ex : docker run --name avti-db -d avti_run
+      * Ex : docker run --name revive-db -d revive_run
     * Connect to postgres instance
       * docker exec -it docker_instance psql -U postgres_user
-      * Ex. docker exec -it avti_run psql -U avti_db
+      * Ex. docker exec -it revive_run psql -U revive_db
 
 
 * References
