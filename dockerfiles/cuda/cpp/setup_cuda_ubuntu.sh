@@ -56,8 +56,8 @@ CUDA_MAJOR=$(echo "${CUDA_VERSION_MAJOR_MINOR}" | cut -d. -f1)
 CUDA_MINOR=$(echo "${CUDA_VERSION_MAJOR_MINOR}" | cut -d. -f2)
 CUDA_PATCH=$(echo "${CUDA_VERSION_MAJOR_MINOR}" | cut -d. -f3)
 # use lsb_release to find the OS.
-UBUNTU_VERSION=$(lsb_release -sr)
-UBUNTU_VERSION="${UBUNTU_VERSION//.}"
+UBUNTU_VERSION=${ubuntu_ver}
+UBUNTU_VERSION="22"
 
 echo "CUDA_MAJOR: ${CUDA_MAJOR}"
 echo "CUDA_MINOR: ${CUDA_MINOR}"
@@ -75,7 +75,7 @@ if [ -z "${CUDA_MINOR}" ] ; then
     exit 1
 fi
 # If we don't know the Ubuntu version, error.
-if [ -z ${UBUNTU_VERSION} ]; then
+if [ -z "${UBUNTU_VERSION}" ]; then
     echo "Error: Unknown Ubuntu version. Aborting."
     exit 1
 fi
@@ -153,6 +153,25 @@ elif [ "$is_root" = false ] ; then
     USE_SUDO=sudo
 else
     USE_SUDO=
+fi
+
+USE_SUDO=
+## -----------------
+## Install
+## -----------------
+echo "Adding CUDA Repository"
+wget ${PIN_URL}
+$USE_SUDO mv ${PIN_FILENAME} /etc/apt/preferences.d/cuda-repository-pin-600
+wget ${KEYRING_PACKAGE_URL} && ${USE_SUDO} dpkg -i ${KERYRING_PACKAGE_FILENAME} && rm ${KERYRING_PACKAGE_FILENAME}
+$USE_SUDO add-apt-repository "deb ${REPO_URL} /"
+$USE_SUDO apt-get update
+
+echo "Installing CUDA packages ${CUDA_PACKAGES}"
+$USE_SUDO apt-get -y install ${CUDA_PACKAGES}
+
+if [[ $? -ne 0 ]]; then
+    echo "CUDA Installation Error."
+    exit 1
 fi
 
 
