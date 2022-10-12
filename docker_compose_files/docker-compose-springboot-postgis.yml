@@ -1,0 +1,23 @@
+services:
+  server:
+    image: 'slabstech/bhoomi-garuda'     # SpringBoot Server
+    build:
+      context: server 
+      dockerfile: server/postgis/Dockerfile
+    container_name: app
+    restart: always
+    ports:
+      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/garuda_db
+      - SPRING_DATASOURCE_USERNAME=garuda_db
+      - SPRING_DATASOURCE_PASSWORD=garuda_db
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - POSTGRES_USER=garuda_db
+      - POSTGRES_PASSWORD=garuda_db
+      - POSTGRES_DB=garuda_db
+
+    #networks: # Networks to join (Services on the same network can communicate with each other using their name)
+    #  - backend
+    # volumes:
+    #   - db-data:/var/lib/

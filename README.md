@@ -3,19 +3,20 @@
 
 * List of Available Docker Images
 
-| Docker Image        | Docker Hub Repo                                                                                     | Github Package Registry                                                                                       | Size(Mb) |
-|---------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------|
-| Server - SpringBoot | [slabstech/revive-server-spring-boot](https://hub.docker.com/r/slabstech/revive-server-spring-boot) | [revive-server-spring-boot](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-spring-boot) | 157.3    |
-| Server - Dropwizard | [slabstech/revive-server-dropwizard](https://hub.docker.com/r/slabstech/revive-server-dropwizard)   | [revive-server-dropwizard](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-dropwizard)   | 109.2    |
-| Client - ReactJS    | [slabstech/revive-client-reactjs](https://hub.docker.com/r/slabstech/revive-client-reactjs)         | [revive-client-reactjs](https://github.com/sachinsshetty/revive/pkgs/container/revive-client-reactjs)         | 54.13    |
-| DB - PostgreSQL     | [slabstech/revive-db-postgresql](https://hub.docker.com/r/slabstech/revive-db-postgresql)           | [revive-db-postgresql](https://github.com/sachinsshetty/revive/pkgs/container/revive-db-postgresql)           | 80.07    |
+| Docker Image         | Docker Hub Repo                                                                                     | Github Package Registry                                                                                       | Size(Mb) |
+|----------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------|
+| Server - SpringBoot  | [slabstech/revive-server-spring-boot](https://hub.docker.com/r/slabstech/revive-server-spring-boot) | [revive-server-spring-boot](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-spring-boot) | 157.3    |
+| Server - Dropwizard  | [slabstech/revive-server-dropwizard](https://hub.docker.com/r/slabstech/revive-server-dropwizard)   | [revive-server-dropwizard](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-dropwizard)   | 109.2    |
+| Client - ReactJS     | [slabstech/revive-client-reactjs](https://hub.docker.com/r/slabstech/revive-client-reactjs)         | [revive-client-reactjs](https://github.com/sachinsshetty/revive/pkgs/container/revive-client-reactjs)         | 54.13    |
+| DB - PostgreSQL      | [slabstech/revive-db-postgresql](https://hub.docker.com/r/slabstech/revive-db-postgresql)           | [revive-db-postgresql](https://github.com/sachinsshetty/revive/pkgs/container/revive-db-postgresql)           | 80.07    |
+| SpringBoot - Postgis | [slabstech/revive-db-postgresql](https://hub.docker.com/r/slabstech/revive-db-postgresql)           | [revive-db-postgresql](https://github.com/sachinsshetty/revive/pkgs/container/revive-db-postgresql)           | 80.07    |
 
 
 * Commands used to build different Docker Images
 
 | Description                               | Command                                                                                                    |
 |-------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Docker command to build an image          | docker build -t username/imagename:version                                                                 |
+| Docker command to build an image          | docker build -t username/imagename:version .                                                               |
 | Start a docker instance from docker_image | docker run --name docker_image -d database                                                                 |
 | Connect to postgres instance              | docker exec -it docker_instance psql -U postgres_user                                                      |
 | Docker Image for Postgres DB              | docker build rm . -t reponame/db-postgresql -f dockerfiles/db/postgresql/Dockerfile                        |
