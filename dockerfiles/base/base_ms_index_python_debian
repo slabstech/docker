@@ -1,0 +1,6 @@
+FROM python:3.10.9-slim-bullseye@sha256:b22d43a1278b3d417219cc2cdc375866d23ebcfb9d852b13b974d421158f6c08 AS python_build
+WORKDIR /app
+
+ENV dockerfile="python:3.10.9-slim-bullseye"
+ENV shar256="sha256:b22d43a1278b3d417219cc2cdc375866d23ebcfb9d852b13b974d421158f6c08"
+ENV created_date="12-12-2022:08.01.00"

@@ -72,6 +72,7 @@
 * https://hub.docker.com/r/cafapi/java-postgres
 * https://www.baeldung.com/spring-boot-postgresql-docker
 * https://hub.docker.com/_/openjdk
+* https://snyk.io/blog/best-practices-for-managing-java-dependencies/
 
 ### FAQ's
 
