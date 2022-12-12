@@ -1,6 +1,0 @@
-FROM eclipse-temurin:17.0.5_8-jdk-alpine@sha256:11b3932876692a3bf234682f810fcc2a1612d99af863824c7d05bfe29fa28c88 AS jre-build
-WORKDIR /app
-
-ENV dockerfile="eclipse-temurin:17.0.5_8-jdk-alpine"
-ENV shar256="sha256:11b3932876692a3bf234682f810fcc2a1612d99af863824c7d05bfe29fa28c88"
-ENV created_date="12-12-2022:07.50.00"
