@@ -1,5 +1,5 @@
 #### Stage 1: Build the react application
-FROM node:16.15.0-alpine3.15 as build-revive-client-reactjs
+FROM slabstech/node as build-revive-client-reactjs
 
 # Configure the main working directory inside the docker image.
 # This is the base directory used in any further RUN, COPY, and ENTRYPOINT

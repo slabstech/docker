@@ -1,5 +1,8 @@
-FROM slabstech:base_ms_index_gradle AS jre-build
+FROM slabstech:gradle AS jre-build
+
 WORKDIR /app
+RUN chown -R appuser:appuser /app
+USER appuser
 
 COPY . .
 RUN gradle -p /app/ build -x test
@@ -10,13 +13,7 @@ RUN jdeps --ignore-missing-deps --module-path modules --add-modules=ALL-MODULE-P
 RUN jlink --add-modules ALL-MODULE-PATH --no-man-pages --no-header-files --compress=2 --output jre
 
 # take a smaller runtime image for the final output
-FROM slabstech:base_ms_index_alpine as deployment
-
-RUN apk add dumb-init
-
-WORKDIR /app
-
-RUN addgroup --system javauser && adduser -S -s /bin/false -G javauser javauser
+FROM slabstech:alpine as deployment
 
 # copy the custom JRE produced from jlink
 COPY --from=jre-build /app/jre jre
@@ -24,8 +21,8 @@ COPY --from=jre-build /app/jre jre
 # copy the app
 COPY --from=jre-build /app/app.jar app.jar
 
-RUN chown -R javauser:javauser /app
-USER javauser
+RUN chown -R appuser:appuser /app
+USER appuser
 
 # run the app on startup
 

@@ -14,15 +14,15 @@
 
 * Commands used to build different Docker Images
 
-| Description                               | Command                                                                                                    |
-|-------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Docker command to build an image          | docker build -t username/imagename:version .                                                               |
-| Start a docker instance from docker_image | docker run --name docker_image -d database                                                                 |
-| Connect to postgres instance              | docker exec -it docker_instance psql -U postgres_user                                                      |
-| Docker Image for Postgres DB              | docker build rm . -t reponame/db-postgresql -f dockerfiles/db/postgresql/Dockerfile                        |
-| Docker Image for SpringBoot               | docker build rm . -t reponame/server-spring-boot network host -f dockerfiles/server/spring_boot/Dockerfile |
-| Docker Image for Dropwizard               | docker build rm . -t reponame/db-postgresql -f dockerfiles/db/postgresql/Dockerfile                        |
-| Docker Image for ReactJS                  | docker build rm . -t reponame/client-reactjs --network host -f dockerfiles/client/reactjs/Dockerfile       |
+| Description                               | Command                                                                                                      |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| Docker command to build an image          | docker build -t username/imagename:version .                                                                 |
+| Start a docker instance from docker_image | docker run --name docker_image -d database                                                                   |
+| Connect to postgres instance              | docker exec -it docker_instance psql -U postgres_user                                                        |
+| Docker Image for Postgres DB              | docker build --rm . -t reponame/db-postgresql -f dockerfiles/db/postgresql/Dockerfile                        |
+| Docker Image for SpringBoot               | docker build --rm . -t reponame/server-spring-boot network host -f dockerfiles/server/spring_boot/Dockerfile |
+| Docker Image for Dropwizard               | docker build --rm . -t reponame/db-postgresql -f dockerfiles/db/postgresql/Dockerfile                        |
+| Docker Image for ReactJS                  | docker build --rm . -t reponame/client-reactjs --network host -f dockerfiles/client/reactjs/Dockerfile       |
 
 
 * Verify in browser with containerImageIp:8080

@@ -1,4 +1,4 @@
-FROM gradle:7.4.2-jdk17-alpine AS jre-build
+FROM slabstech/gradle AS jre-build
 WORKDIR /app
 
 ## Change the path to copy the source code
@@ -13,7 +13,7 @@ RUN jdeps --ignore-missing-deps --module-path modules --add-modules=ALL-MODULE-P
 RUN jlink --add-modules ALL-MODULE-PATH --no-man-pages --no-header-files --compress=2 --output jre
 
 # take a smaller runtime image for the final output
-FROM alpine:latest as server-dropwizard
+FROM slabstech/alpine as server-dropwizard
 WORKDIR /deployment
 
 # copy the custom JRE produced from jlink
