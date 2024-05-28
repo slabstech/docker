@@ -1,6 +1,16 @@
 # DockerFiles
 ##### Collection of Dockerfiles for daily usage
 
+* Docker Compose for LLM
+| Framework         | Docker Compose File                                                                                     | 
+|----------------------|-----------------------------------------------------------------------------------------------------|
+| Ollama + OpenWeb-UI + NVIDIA GPU  | [gpu-ollama-openweb-ui](docker_compose_files/llm/gpu-ollama-openweb-ui.yml)| 
+| Ollama + CPU  | [cpu-ollama](docker_compose_files/llm/cpu-ollama.yml)| 
+| Ollama + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-ollama.yml)| 
+| VLLM + HuggingFace + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-vllm.yml)| 
+
+
+
 * List of Available Docker Images
 
 | Docker Image         | Docker Hub Repo                                                                                     | Github Package Registry                                                                                       | Size(Mb) |
