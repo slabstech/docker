@@ -2,12 +2,15 @@
 ##### Collection of Dockerfiles for daily usage
 
 * Docker Compose for LLM
-| Framework         | Docker Compose File                                                                                     | 
-|----------------------|-----------------------------------------------------------------------------------------------------|
-| Ollama + OpenWeb-UI + NVIDIA GPU  | [gpu-ollama-openweb-ui](docker_compose_files/llm/gpu-ollama-openweb-ui.yml)| 
-| Ollama + CPU  | [cpu-ollama](docker_compose_files/llm/cpu-ollama.yml)| 
-| Ollama + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-ollama.yml)| 
-| VLLM + HuggingFace + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-vllm.yml)| 
+
+| Framework  | Docker Compose File |
+|----------------------|------------------------------------|
+| Mistral + Whisper + Coqui-TTS | [mistral-whispser-coqui-tts](docker_compose_files/llm/mistral-whisper-coqui-tts.yml) | 
+| Mistral + Whisper  | [mistral-whisper](docker_compose_files/llm/mistral-whisper.yml) | 
+| Ollama + OpenWeb-UI + NVIDIA GPU  | [gpu-ollama-openweb-ui](docker_compose_files/llm/gpu-ollama-openweb-ui.yml) | 
+| Ollama + CPU  | [cpu-ollama](docker_compose_files/llm/cpu-ollama.yml) | 
+| Ollama + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-ollama.yml) | 
+| VLLM + HuggingFace + NVIDIA GPU  | [gpu-ollama](docker_compose_files/llm/gpu-vllm.yml) | 
 
 
 
@@ -15,6 +18,7 @@
 
 | Docker Image         | Docker Hub Repo                                                                                     | Github Package Registry                                                                                       | Size(Mb) |
 |----------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|----------|
+| [Whisper](dockerfiles/llm/Whisper-Dockerfile)  | [slabstech/whisper-cpu-api](https://hub.docker.com/r/slabstech/revive-server-spring-boot) | [whisper-cpu-api](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-spring-boot) | -    |
 | Server - SpringBoot  | [slabstech/revive-server-spring-boot](https://hub.docker.com/r/slabstech/revive-server-spring-boot) | [revive-server-spring-boot](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-spring-boot) | 157.3    |
 | Server - Dropwizard  | [slabstech/revive-server-dropwizard](https://hub.docker.com/r/slabstech/revive-server-dropwizard)   | [revive-server-dropwizard](https://github.com/sachinsshetty/revive/pkgs/container/revive-server-dropwizard)   | 109.2    |
 | Client - ReactJS     | [slabstech/revive-client-reactjs](https://hub.docker.com/r/slabstech/revive-client-reactjs)         | [revive-client-reactjs](https://github.com/sachinsshetty/revive/pkgs/container/revive-client-reactjs)         | 54.13    |
