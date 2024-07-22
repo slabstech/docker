@@ -5,6 +5,7 @@
 
 | Framework  | Docker Compose File |
 |----------------------|------------------------------------|
+| Mistral + VLLM | [mistral-vllm](docker_compose_files/llm/mistral-vllm.yml) | 
 | Mistral + Whisper + Coqui-TTS | [mistral-whispser-coqui-tts](docker_compose_files/llm/mistral-whisper-coqui-tts.yml) | 
 | Mistral + Whisper  | [mistral-whisper](docker_compose_files/llm/mistral-whisper.yml) | 
 | Ollama + OpenWeb-UI + NVIDIA GPU  | [gpu-ollama-openweb-ui](docker_compose_files/llm/gpu-ollama-openweb-ui.yml) | 
